@@ -27,7 +27,7 @@ api.interceptors.response.use(res => {
 
 api.interceptors.request.use(req => {
   if(req.url.includes('admin')) {
-    const apiData: ApiData = JSON.parse(Cookie.get('@api-data'));
+    const apiData: ApiData = Cookie.get('@api-data') ? JSON.parse(Cookie.get('@api-data')) : null;
     req.headers = apiData as ApiHeaders;
   }
 
