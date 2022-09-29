@@ -5,6 +5,10 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from '../store';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure();
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/globals.css'
 
