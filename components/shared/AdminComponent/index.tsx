@@ -1,9 +1,8 @@
 import React from 'react';
-
 import { Col, Row } from 'react-bootstrap';
 
 import AdminHeader from '../Header/AdminHeader';
-
+import AdminFooter from '../Footer/AdminFooter';
 interface AdminComponentProps {
   children?: React.ReactNode
 }
@@ -22,6 +21,8 @@ const AdminComponent: React.FC<AdminComponentProps> = ({ children }) => {
           <div className="flex-fill text-center">
             { children }
           </div>
+
+          <AdminFooter />
         </div>
       </Col>
     </Row>
