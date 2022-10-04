@@ -11,10 +11,11 @@ import styles from '../../../styles/AdminPanelHead.module.css';
 interface AdminPanelHeadProps {
   title: String,
   path: String,
-  icon?: IconProp
+  icon?: IconProp,
+  newPath?: string
 }
 
-const AdminPanelHead: React.FC<AdminPanelHeadProps> = ({ title, path, icon }) => {
+const AdminPanelHead: React.FC<AdminPanelHeadProps> = ({ title, path, icon, newPath = '#' }) => {
   return (
     <Row className="mt-4">
       {
@@ -25,7 +26,7 @@ const AdminPanelHead: React.FC<AdminPanelHeadProps> = ({ title, path, icon }) =>
             </Col>
 
             <Col lg={{span: 4, offset: 2}} xs={8}>
-              <SearchAndIcon icon={icon} />
+              <SearchAndIcon icon={icon} newPath={newPath} />
             </Col>
           </>
         :

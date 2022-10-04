@@ -5,8 +5,7 @@ interface UrlServiceRequest {
 
 const UrlService = {
   execute({ page, search }: UrlServiceRequest): string {
-    return `${search !== '' ? `?search[name]=${search}` : ''}` +
-      `${search !== '' ? '&' : '?'}page=${page}`;
+    return `${search ? `?search[name]=${search}&page=${page}` : `?page=${page}`}`
   }
 }
 

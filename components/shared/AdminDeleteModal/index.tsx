@@ -8,7 +8,7 @@ import styles from '../../../styles/AdminPanel.module.css';
 
 interface AdminDeleteModalProps {
   show: boolean,
-  handleClose: (success?: boolean) => void,
+  handleClose: (confirm?: boolean) => void,
   target: string
 }
 
@@ -16,7 +16,7 @@ const AdminDeleteModal: React.FC<AdminDeleteModalProps> = ({ show, handleClose, 
   return (
     <Modal show={show} onHide={handleClose} className={styles.modal} animation={true}>
       <Modal.Body className={styles.modal_body}>
-        Tem certeza que deseja excluir este {target}?
+        <p>Tem certeza que deseja excluir este(a) {target}?</p>
 
         <Row>
           <Col lg={6} xs>
@@ -26,7 +26,7 @@ const AdminDeleteModal: React.FC<AdminDeleteModalProps> = ({ show, handleClose, 
           </Col>
 
           <Col lg={6} xs>
-            <div onClick={() => handleClose(true)}>
+            <div onClick={() => handleClose(false)}>
               <StyledButton icon={faTimes} action={"Cancelar"} type_button="blue" />
             </div>
           </Col>
